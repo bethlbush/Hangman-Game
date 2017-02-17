@@ -2,8 +2,8 @@
 /* "Press any key to get started" 
 Use key event to start game when user
 presses any key.*/
-
-/*Populate an array with the list of words
+document.onkeyup = function()
+/*Create an array with the list of words
 the computer will choose from.*/
 var wordList = 
 ["Aqua", "Aquamarine", "Azure", "Beige", "Bisque", 
@@ -26,18 +26,17 @@ var wordList =
  } */
 
 /*computer randomly chooses a word from the array.*/
-var getNewWord = function () {
-var newWord = wordList[Math.floor(Math.random() * 50)];
-return newWord;
-};
 
-console.log(wordList.length);
+var newWord = wordList[Math.floor(Math.random() * wordList.length)];
+//console.log(newWord);
 
-getNewWord();
-console.log(newWord);
+var word = document.getElementById("word");
 
-/*"current word" is displayed
+word.innerHTML = newWord;
+
+/*"newWord" is displayed
 as underscores where letters should be.*/
+var blankWord
 
 /*"letters chosen" If the letter guessed 
 is correct, it goes in the correct slot 
